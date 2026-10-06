@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskEZ - Autonomous Agentic AI Dashboard</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="navbar">
+            <div class="logo">
+                <span class="badge font-mono">v1.0</span>
+                <h2>TaskEZ <span class="accent-text">Agent Engine</span></h2>
+            </div>
+            <div class="status-indicator">
+                <span id="ws-status" class="dot disconnected"></span>
+                <span id="ws-status-text">Disconnected</span>
+            </div>
+        </header>
+
+        <!-- Main Layout -->
+        <main class="dashboard-grid">
+            <!-- Left Control & Planning Panel -->
+            <section class="card control-card">
+                <h3>🚀 High-Level Goal Input</h3>
+                <p class="subtitle">Enter any complex task or select an example prompt below:</p>
+
+                <div class="form-group">
+                    <textarea id="goal-input" rows="3" placeholder="e.g., Given GitHub repo 'https://github.com/fastapi/fastapi', identify code quality issues and suggest fixes."></textarea>
+                </div>
+
+                <div class="options-row">
+                    <div class="select-group">
+                        <label for="failure-select">🧪 Failure Injection (Rubric Demo):</label>
+                        <select id="failure-select">
+                            <option value="none">None (Standard Autonomous Execution)</option>
+                            <option value="web_scraper">Simulate Web Scraper Timeout</option>
+                            <option value="web_search">Simulate Web Search Network Error</option>
+                            <option value="github_analyzer">Simulate GitHub API Failure</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="quick-prompts">
+                    <span class="label">Quick Prompts:</span>
+                    <button class="chip" onclick="setPrompt(1)">🐙 GitHub Code Audit</button>
+                    <button class="chip" onclick="setPrompt(2)">🗼 Tokyo 3-Day Travel & Budget</button>
+                    <button class="chip" onclick="setPrompt(3)">🔬 AI Tech Research</button>
+                </div>
+
+                <button id="run-btn" class="btn primary-btn" onclick="startAgentTask()">
+                    <span>Execute Agent Goal</span>
+                </button>
+            </section>
+
+            <!-- Middle Live Execution & Planning Trace -->
+            <section class="card trace-card">
+                <div class="card-header">
+                    <h3>🧠 Live Planning Trace & Execution Stream</h3>
+                    <span id="step-badge" class="badge">Idle</span>
+                </div>
+
+                <div id="plan-container" class="plan-box hidden">
+                    <h4>Decomposed Execution Plan (<span id="domain-label">...</span>)</h4>
+                    <div id="plan-steps" class="steps-grid"></div>
+                </div>
+
+                <div id="trace-log" class="trace-log-box">
+                    <div class="placeholder-msg">Click 'Execute Agent Goal' to watch the autonomous planning trace and self-correction live!</div>
+                </div>
+            </section>
+
+            <!-- Right Final Structured Report View -->
+            <section class="card report-card">
+                <h3>📑 Structured Final Report</h3>
+                <div id="report-metrics" class="metrics-row hidden">
+                    <div class="metric"><span class="val" id="m-steps">0</span><span class="lbl">Steps</span></div>
+                    <div class="metric"><span class="val text-success" id="m-success">0</span><span class="lbl">Success</span></div>
+                    <div class="metric"><span class="val text-warning" id="m-recovery">0</span><span class="lbl">Recoveries</span></div>
+                    <div class="metric"><span class="val" id="m-duration">0s</span><span class="lbl">Duration</span></div>
+                </div>
+                <div id="report-content" class="markdown-view">
+                    <p class="placeholder-msg">Final structured Markdown & JSON report will be rendered here upon goal completion.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
