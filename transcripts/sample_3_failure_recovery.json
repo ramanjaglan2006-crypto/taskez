@@ -1,0 +1,43 @@
+{
+  "goal": "Plan a 3-day travel itinerary for Tokyo respecting a given budget and interests.",
+  "domain": "travel_budget_planning",
+  "failure_injection": "web_scraper",
+  "summary": "TaskEZ agent executed goal 'Plan a 3-day travel itinerary for Tokyo' with 4/4 steps succeeding after 1 self-correction (web_scraper tool HTTP timeout -> substituted with web_search fallback tool).",
+  "plan_overview": [
+    "Step 1: Research Attractions & Spots in Tokyo [web_search]",
+    "Step 2: Scrape Detailed Travel Guidelines & Costs [web_scraper -> FALLBACK: web_search]",
+    "Step 3: Compute Itemized Budget & Expenses [code_calculator]",
+    "Step 4: Generate 3-Day Travel Itinerary Report for Tokyo [report_generator]"
+  ],
+  "steps_executed": 4,
+  "successful_steps": 4,
+  "failed_steps": 0,
+  "self_corrections_made": 1,
+  "key_findings": [
+    {
+      "step_id": 1,
+      "title": "Research Attractions & Spots in Tokyo",
+      "status": "completed",
+      "recovery": null
+    },
+    {
+      "step_id": 2,
+      "title": "Scrape Detailed Travel Guidelines & Costs",
+      "status": "completed",
+      "recovery": "Self-Correction: Substituted failed web_scraper tool (HTTP 504 Timeout) with web_search tool fallback."
+    },
+    {
+      "step_id": 3,
+      "title": "Compute Itemized Budget & Expenses",
+      "status": "completed",
+      "recovery": null
+    },
+    {
+      "step_id": 4,
+      "title": "Generate 3-Day Travel Itinerary Report for Tokyo",
+      "status": "completed",
+      "recovery": null
+    }
+  ],
+  "total_duration_seconds": 2.15
+}

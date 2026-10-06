@@ -1,0 +1,42 @@
+{
+  "goal": "Research and summarize the top 3 developments in AI Agent Frameworks from the last week.",
+  "domain": "topic_research_summarization",
+  "summary": "TaskEZ agent executed goal 'Research and summarize the top 3 developments in AI Agent Frameworks from the last week.' across domain 'topic_research_summarization' with 4/4 steps succeeding and 0 self-corrections.",
+  "plan_overview": [
+    "Step 1: Perform Multi-Source Web Search [web_search]",
+    "Step 2: Extract Deep Source Insights [web_scraper]",
+    "Step 3: Analyze Trends & Compute Metrics [code_calculator]",
+    "Step 4: Generate Structured Research Brief [report_generator]"
+  ],
+  "steps_executed": 4,
+  "successful_steps": 4,
+  "failed_steps": 0,
+  "self_corrections_made": 0,
+  "key_findings": [
+    {
+      "step_id": 1,
+      "title": "Perform Multi-Source Web Search",
+      "status": "completed",
+      "recovery": null
+    },
+    {
+      "step_id": 2,
+      "title": "Extract Deep Source Insights",
+      "status": "completed",
+      "recovery": null
+    },
+    {
+      "step_id": 3,
+      "title": "Analyze Trends & Compute Metrics",
+      "status": "completed",
+      "recovery": null
+    },
+    {
+      "step_id": 4,
+      "title": "Generate Structured Research Brief",
+      "status": "completed",
+      "recovery": null
+    }
+  ],
+  "total_duration_seconds": 1.45
+}
